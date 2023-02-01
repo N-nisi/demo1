@@ -5,7 +5,26 @@
     <title>top page</title>
 </head>
 <body>
-    <h1>Top Page</h1>
-    <p>[[${response}]]</p>
+<h1>Top Page</h1>
+<table border>
+    <tr>
+        <td>userId</td>
+        <td>[[${response.userId}]]</td>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>[[${response.id}]]</td>
+    </tr>
+    <tr>
+        <td>title</td>
+        <td>[[${response.title}]]</td>
+    </tr>
+    <tr>
+        <td>completed</td>
+        <td>[[${response.completed}]]</td>
+    </tr>
+</table>
+
+
 </body>
 </html>
