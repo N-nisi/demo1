@@ -1,7 +1,5 @@
 package com.example.demo1.infrastracture.entity.response;
 
-import java.util.List;
-import javax.print.DocFlavor;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,12 +10,13 @@ import lombok.NoArgsConstructor;
 public class UsersResponse {
     private Integer id;
     private String name;
-    private String userName;
+    private String username;
     private String email;
     private Address address;
     private String phone;
     private String website;
     private Company company;
+
 
     @Data
     @AllArgsConstructor

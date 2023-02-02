@@ -1,7 +1,6 @@
 package com.example.demo1.infrastracture;
 
 import com.example.demo1.domain.Todo;
-import com.example.demo1.domain.User;
 import com.example.demo1.infrastracture.entity.response.UsersResponse;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;

@@ -5,31 +5,28 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+
 
 @Data
 @Builder
-@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor (access = AccessLevel.PRIVATE)
 public class User{
-    private Integer id;
-    private String name;
-    private String userName;
-    private double lat;
-    private double lng;
+    private final Integer id;
+    private final String name;
+    private final String username;
+    private final double lat;
+    private final double lng;
 
     /**
      * ファクトリメソッド(入れ替える)
      */
     public static User from(UsersResponse response) {
-
         return User.builder()
                 .id(response.getId())
                 .name(response.getName())
-                .userName(response.getUserName())
+                .username(response.getUsername())
                 .lat(Double.parseDouble(response.getAddress().getGeo().getLat()))
                 .lng(Double.parseDouble(response.getAddress().getGeo().getLng()))
                 .build();
-
     }
 }
