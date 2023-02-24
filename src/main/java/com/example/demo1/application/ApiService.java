@@ -12,14 +12,23 @@ import org.springframework.stereotype.Service;
 public class ApiService {
     private final ApiRepository apiRepository;
 
+    /**
+     * Todoリストを取得するサービス
+     *
+     * @return Todoオブジェクト
+     */
+
     public Todo getTodo(){
-       Todo response = apiRepository.getTodo();
-       return response;
+       return apiRepository.getTodo();
     }
 
+    /**
+     * Userリストを取得するサービス
+     *
+     * @return Userオブジェクト
+     */
    public User getUser(){
-       UsersResponse response2 = apiRepository.getUser();
-       return User.from(response2);
+       return User.from(apiRepository.getUser());
    }
 }
 
