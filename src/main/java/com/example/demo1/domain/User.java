@@ -5,6 +5,7 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.util.ObjectUtils;
 
 
 @Data
@@ -19,8 +20,13 @@ public class User{
 
     /**
      * ファクトリメソッド(入れ替える)
+     * @param response UserResponse
+     * @return Userオブジェクト
      */
     public static User from(UsersResponse response) {
+        if(ObjectUtils.isEmpty(response)){
+            return empty();
+        }
         return User.builder()
                 .id(response.getId())
                 .name(response.getName())
@@ -29,4 +35,32 @@ public class User{
                 .lng(Double.parseDouble(response.getAddress().getGeo().getLng()))
                 .build();
     }
+
+    /**
+     * 空メソッド
+     * @return Userオブジェクト
+     */
+    public static User empty(){
+        return User.builder()
+                .id(0)
+                .name("")
+                .username("")
+                .lat(0)
+                .lng(0)
+                .build();
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

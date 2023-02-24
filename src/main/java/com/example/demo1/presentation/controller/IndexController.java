@@ -6,19 +6,20 @@ import com.example.demo1.domain.User;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 
+/**
+ *初期画面
+ *
+ * @param model 画面モデル
+ * @return html
+ */
 
 @Controller
 @AllArgsConstructor
 public class IndexController {
 
     private final ApiService apiService;
-    @RequestMapping("/")
-    public String index(String[] args){
-        return "index";
-    }
     @GetMapping("/")
     public String index(Model model) {
 
@@ -28,11 +29,14 @@ public class IndexController {
         return "index";
     }
 
+    /**
+     *Other画面
+     *
+     * @param model 画面モデル
+     * @return html
+     */
 
-    @RequestMapping("/other")
-    public String secondPage() {
-        return "other";
-    }
+
     @GetMapping("/other")
     public String other(Model model) {
 

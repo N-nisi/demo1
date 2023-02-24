@@ -7,27 +7,30 @@ import org.springframework.web.client.RestTemplate;
 
 @Repository
 public class ApiRepository {
-    public Todo getTodo(){
-        String url = "https://jsonplaceholder.typicode.com/todos/1";
+    private static final String TODO_URL = "https://jsonplaceholder.typicode.com/todos/1";
+    private static final String USER_URL = "https://jsonplaceholder.typicode.com/users/1";
 
+    /**
+     * TodoAPI(GET)
+     * I/F仕様書:https://jsonplaceholder.typicode.com/guide/
+     *
+     * @return Todo
+     */
+    public Todo getTodo(){
         //リクエストの送信
         RestTemplate restTemplate = new RestTemplate();
-
-        //レスポンスボディを直接取得
-        Todo response = restTemplate.getForObject(url, Todo.class);
-
-        return response;
+        return restTemplate.getForObject(TODO_URL, Todo.class);
     }
 
+    /**
+     * UserAPI(GET)
+     * I/F仕様書:https://jsonplaceholder.typicode.com/guide/
+     *
+     * @return User
+     */
     public UsersResponse getUser(){
-        String url = "https://jsonplaceholder.typicode.com/users/1";
-
         //リクエストの送信
         RestTemplate restTemplate = new RestTemplate();
-
-        //レスポンスボディを直接取得
-        UsersResponse response2 = restTemplate.getForObject(url, UsersResponse.class);
-
-        return response2;
+        return restTemplate.getForObject(USER_URL, UsersResponse.class);
     }
 }
