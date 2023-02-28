@@ -33,4 +33,5 @@ public class ApiRepository {
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForObject(USER_URL, UsersResponse.class);
     }
+
 }
