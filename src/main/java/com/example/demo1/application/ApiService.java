@@ -3,7 +3,6 @@ package com.example.demo1.application;
 import com.example.demo1.domain.Todo;
 import com.example.demo1.domain.User;
 import com.example.demo1.infrastracture.ApiRepository;
-import com.example.demo1.infrastracture.entity.response.UsersResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -16,15 +16,15 @@ fetch(RANDOM_URL).then(function(response) {
   const email = randomData.results[0].email;
 
 // HTML書き換え
-  const information = document.getElementById("gender");
-  information.innerHTML = gender;
+  const informationGender = document.getElementById("gender");
+  informationGender.innerHTML = gender;
 
-  const information1 = document.getElementById("name");
-  information1.innerHTML = nameTitle+" "+nameFirst+" "+nameLast;
+  const informationName = document.getElementById("name");
+  informationName.innerHTML = nameTitle+" "+nameFirst+" "+nameLast;
 
-  const information2 = document.getElementById("country");
-  information2.innerHTML = country;
+  const informationCountry = document.getElementById("country");
+  informationCountry.innerHTML = country;
 
-  const information3 = document.getElementById("email");
-  information3.innerHTML = email;
+  const informationEmail = document.getElementById("email");
+  informationEmail.innerHTML = email;
 });
